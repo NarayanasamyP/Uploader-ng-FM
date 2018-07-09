@@ -1,0 +1,29 @@
+
+<div class="container">
+    <h3 >Uploader template</h3>
+    <div class="control-sectin">
+        <div class="col-lg-12">
+            <div class="control_wrapper">
+                <div class="sample_wrapper">
+                    <div id="dropArea">             
+                        <span id="drop" class="droparea">
+                            <a href="" id="browse" (click)='browseClick()'><u>Browse</u></a>
+                        </span>   
+                    </div>
+                </div> 
+                <ejs-uploader #defaultupload id='template'  [asyncSettings]='path' (success)='onUploadSuccess($event)' 
+                    (failure)='onUploadFailed($event)' (progress)='onUploadInProgress($event)'>
+                    <ng-template #template="" let-data="">
+                    <span class="wrapper">
+                        <span class="icon template-icons sf-icon-{{data.type}}"></span>
+                        <span class="name file-name">{{data.name}}</span>
+                        <span class="name file-size"> {{data.size}} Bytes</span>
+                        <span class="upload-status">{{data.status}}</span>
+                        <span class="e-icons e-file-remove-btn" title="Remove"></span>
+                    </span>
+                    </ng-template>
+                </ejs-uploader>
+            </div>
+        </div>
+    </div>
+</div>

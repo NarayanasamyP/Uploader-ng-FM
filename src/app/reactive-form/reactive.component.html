@@ -1,0 +1,41 @@
+<div class="container">
+    <h3>Reactive Forms</h3>
+  <form class="form-horizontal" [formGroup]="form" (ngSubmit)="onSubmit()">
+    <div class="form-group">
+        <label for="upload" class="control-label">Uploader</label>
+        <ejs-uploader id="Uploader" #formUpload name="upload" class="form-control" formControlName="upload" [autoUpload] = 'false' (selected) = "onFileSelect($event)"></ejs-uploader>
+    </div>
+    <ejs-dialog #confirmDialog id='confirm' [visible]='visiblity' [content]='content' width='400px' header='Success' isModal='true' [buttons]='buttons' [showCloseIcon]='showCloseIcon'></ejs-dialog>
+    <button type="submit" class="btn btn-primary">
+      Submit
+    </button>
+    <button type="reset" class="btn btn-primary">
+      Reset
+    </button>
+  </form>
+
+  <div id="details">
+    <pre>userForm.value: {{form.value | json}}</pre>
+    <pre>userForm.valid: {{form.valid}}</pre>
+  </div>
+
+</div>
+<style>
+  .form-control {
+    border: none;
+    box-shadow: none;
+  }
+  
+  .form-horizontal {
+    margin-top: 80px;
+  }
+  
+  form {
+    height: auto;
+    width: 500px;
+    margin: 0 auto;
+  }
+  #details{
+    margin-top: 10px;
+  }
+</style>

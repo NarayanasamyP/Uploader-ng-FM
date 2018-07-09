@@ -1,0 +1,14 @@
+
+<div class="container">
+    <h3>Directives example (structural) <code>Note: This is also an example for Rendering Component as Dynamic</code></h3>
+    <div class="control-sectin">
+        <div class="col-lg-12">
+            <div class="control_wrapper"> <div>
+                    <h2 *myNgIf="condition"><ejs-uploader #defaultupload id='fileupload'  [asyncSettings]='path'>
+                        </ejs-uploader></h2>
+                  </div>
+                  <button id="clkBtn" class="btn buttons btn-success" (click)="condition = !condition">Toggle</button>
+            </div>
+        </div>
+    </div>
+</div>

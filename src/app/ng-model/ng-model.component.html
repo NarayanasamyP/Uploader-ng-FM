@@ -1,0 +1,17 @@
+
+<div class="container">
+    <h3 >Ng-model</h3>
+    <div class="control-sectin">
+        <div class="col-lg-12">
+            <div class="control_wrapper">
+                <div class="sample_wrapper">
+                <ejs-uploader #defaultupload id='fileupload'  [asyncSettings]='path' [maxFileSize]='maxFile'>
+                </ejs-uploader>
+                    <!-- code here -->
+                    <hr>
+                    <input type="number" placeholder="Enter maxFileSize values in bytes" class="e-input" [(ngModel)]="maxFile"/>
+                </div> 
+            </div>
+        </div>
+    </div>
+</div>
