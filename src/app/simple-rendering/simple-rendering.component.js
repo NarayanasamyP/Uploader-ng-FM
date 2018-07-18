@@ -16,6 +16,7 @@ var SimpleComponent = (function () {
             saveUrl: 'https://aspnetmvc.syncfusion.com/services/api/uploadbox/Save',
             removeUrl: 'https://aspnetmvc.syncfusion.com/services/api/uploadbox/Remove'
         };
+        this.allowExtensions = '.pdf, .png, .txt';
     }
     return SimpleComponent;
 }());

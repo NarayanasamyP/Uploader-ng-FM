@@ -15,4 +15,5 @@ export class SimpleComponent {
       saveUrl: 'https://aspnetmvc.syncfusion.com/services/api/uploadbox/Save',
       removeUrl: 'https://aspnetmvc.syncfusion.com/services/api/uploadbox/Remove'
   };
+  public allowExtensions: string = '.pdf, .png, .txt';
 }

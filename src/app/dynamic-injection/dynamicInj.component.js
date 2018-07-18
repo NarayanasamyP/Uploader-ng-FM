@@ -10,14 +10,10 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 var core_1 = require("@angular/core");
 var childComponent_1 = require("./childComponent");
-// import {Newcomponent} from './childComponent.ts'; 
 var DynamicInjComponent = (function () {
-    //changes for new component
     function DynamicInjComponent(componentResolver, viewContainerRef) {
         this.componentResolver = componentResolver;
         this.viewContainerRef = viewContainerRef;
-        //end of changes 
-        //childComponent : ChildComponent;
         this.name = "Rendering uploader as dynamic";
         this.isChildModal = false;
     }
@@ -35,9 +31,11 @@ __decorate([
 ], DynamicInjComponent.prototype, "newContent", void 0);
 DynamicInjComponent = __decorate([
     core_1.Component({
-        selector: 'my-app',
+        selector: 'app-container',
         styleUrls: ['./dynamicInj.component.css'],
-        template: "\n    <div id=\"container\" class=\"temp\">\n      <h4>{{name}}</h4>\n      <button (click)=\"openUploader()\">Open Uploader</button>\n      <div id=\"dynamicUpload\"></div>\n    </div>\n  ",
+        styles: ['.e-upload { width: 400px;margin-left: 350px;} #dynamicBtn {margin: 20px 0px 20px 20px }'],
+        encapsulation: core_1.ViewEncapsulation.None,
+        template: "\n    <div id=\"container\" class=\"temp\">\n      <h4>{{name}}</h4>\n      <button id=\"dynamicBtn\" (click)=\"openUploader()\">Open Uploader</button>\n      <br/>\n      <div id=\"dynamicUpload\"></div>\n    </div>\n  ",
         entryComponents: [childComponent_1.Newcomponent]
     }),
     __metadata("design:paramtypes", [core_1.ComponentFactoryResolver,

@@ -10,6 +10,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 var core_1 = require("@angular/core");
 var ej2_ng_inputs_1 = require("@syncfusion/ej2-ng-inputs");
+var ej2_base_1 = require("@syncfusion/ej2-base");
 var TemplateComponent = (function () {
     function TemplateComponent() {
         var _this = this;
@@ -17,6 +18,7 @@ var TemplateComponent = (function () {
             saveUrl: 'https://aspnetmvc.syncfusion.com/services/api/uploadbox/Save',
             removeUrl: 'https://aspnetmvc.syncfusion.com/services/api/uploadbox/Remove'
         };
+        this.allowExtensions = '.pdf, .png, .txt';
         this.uploadTemplate = '<span class="wrapper">' + '<span class="icon template-icons sf-icon-${type}"></span>' +
             '<span class="name file-name">${name} ( ${size} bytes)</span>' +
             '<span class="upload-status">${status}</span>' + '</span>' + '<span class="e-icons e-file-remove-btn" title="Remove"></span>';
@@ -35,12 +37,42 @@ var TemplateComponent = (function () {
             var li = _this.getLiElement(args);
             li.querySelector('.upload-status').innerHTML = args.file.status + '(' + progressValue + ' )';
         };
+        this.onSelect = function (args) {
+            var allowedTypes = ['pdf', 'png', 'txt'];
+            var modifiedFiles = [];
+            for (var _i = 0, _a = args.filesData; _i < _a.length; _i++) {
+                var file = _a[_i];
+                if (allowedTypes.indexOf(file.type.toLowerCase()) > -1) {
+                    modifiedFiles.push(file);
+                }
+            }
+            if (modifiedFiles.length > 0) {
+                args.isModified = true;
+                args.modifiedFilesData = modifiedFiles;
+            }
+            else {
+                args.cancel = true;
+            }
+        };
     }
     TemplateComponent.prototype.ngOnInit = function () {
         this.uploadObj.dropArea = document.getElementById('dropTarget');
-        // this.uploadObj.template = '<span class="wrapper">' + '<span class="icon template-icons sf-icon-${type}"></span>' +
-        //         '<span class="name file-name">${name} ( ${size} bytes)</span>' +
-        //         '<span class="upload-status">${status}</span>' + '</span>' +  '<span class="e-icons e-file-remove-btn" title="Remove"></span>';
+    };
+    TemplateComponent.prototype.ngAfterViewInit = function () {
+        var _this = this;
+        document.getElementById('dropArea').onclick = function (e) {
+            var target = e.target;
+            if (target.classList.contains('e-file-delete-btn')) {
+                for (var i = 0; i < _this.uploadObj.getFilesData().length; i++) {
+                    if (target.parentElement.getAttribute('data-file-name') === _this.uploadObj.getFilesData()[i].name) {
+                        _this.uploadObj.remove(_this.uploadObj.getFilesData()[i]);
+                    }
+                }
+            }
+            else if (target.classList.contains('e-file-remove-btn')) {
+                ej2_base_1.detach(target.parentElement);
+            }
+        };
     };
     TemplateComponent.prototype.browseClick = function () {
         document.getElementsByClassName('e-file-select-wrap')[0].querySelector('button').click();
@@ -55,6 +87,9 @@ var TemplateComponent = (function () {
             }
         }
         return li;
+    };
+    TemplateComponent.prototype.onFileRemove = function (args) {
+        args.postRawFile = false;
     };
     return TemplateComponent;
 }());

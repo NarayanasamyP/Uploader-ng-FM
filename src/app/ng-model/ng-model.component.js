@@ -28,6 +28,7 @@ ModelComponent = __decorate([
         selector: 'app-container',
         templateUrl: './ng-model.component.html',
         styleUrls: ['./ng-model.component.css'],
+        styles: ['.e-upload { width: 400px;}'],
         encapsulation: core_1.ViewEncapsulation.None
     })
 ], ModelComponent);

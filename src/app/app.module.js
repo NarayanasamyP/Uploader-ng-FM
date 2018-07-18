@@ -25,6 +25,7 @@ var dynamicInj_component_1 = require("./dynamic-injection/dynamicInj.component")
 var ng_model_component_1 = require("./ng-model/ng-model.component");
 var directive_component_1 = require("./directive/directive.component");
 var strutural_directive_1 = require("./directive/strutural.directive");
+var field_error_display_component_1 = require("./field-error-display/field-error-display.component");
 // const appRoutes: Routes = [
 //   { path: 'ng-content', component: NgContentComponent }
 // ];
@@ -51,7 +52,8 @@ AppModule = __decorate([
             template_driven_component_1.TemplateDrivenComponent,
             ng_model_component_1.ModelComponent,
             directive_component_1.DirectiveComponent,
-            strutural_directive_1.MyNgIfDirective],
+            strutural_directive_1.MyNgIfDirective,
+            field_error_display_component_1.FieldErrorDisplayComponent],
         bootstrap: [app_component_1.AppComponent],
         providers: [dependent_service_1.DependService]
     })

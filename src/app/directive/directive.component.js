@@ -30,6 +30,7 @@ DirectiveComponent = __decorate([
         selector: 'app-container',
         templateUrl: './directive.component.html',
         styleUrls: ['./directive.component.css'],
+        styles: ['.e-upload { width: 400px;}'],
         encapsulation: core_1.ViewEncapsulation.None
     }),
     __metadata("design:paramtypes", [])

@@ -14,7 +14,9 @@ var DependencyComponent = (function () {
 DependencyComponent = __decorate([
     core_1.Component({
         selector: 'app-container',
-        templateUrl: './app.component.html'
+        templateUrl: './app.component.html',
+        styles: ['.e-upload { width: 400px;}'],
+        encapsulation: core_1.ViewEncapsulation.None
     })
 ], DependencyComponent);
 exports.DependencyComponent = DependencyComponent;

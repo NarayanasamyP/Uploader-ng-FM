@@ -62,7 +62,7 @@ h1 {
         font-size: 13px;
         width: 400px;
     }
-    .control-sectin #template .e-upload .e-file-select-wrap {
+    #dropArea .e-upload .e-file-select-wrap {
         display: none;
     }
     
@@ -95,9 +95,6 @@ h1 {
     }
     .control-sectin .e-upload .e-upload-files .e-file-remove-btn.e-icons {
         top: 50%;
-    }
-    .control-sectin .e-upload .e-upload-files .e-upload-file-list {
-        min-height: 100px;
     }
     .sf-icon-png:before, .sf-icon-PNG:before { content: "\e70a"; }
     .sf-icon-pdf:before, .sf-icon-PDF:before { content: "\e70c"; }
@@ -132,7 +129,7 @@ h1 {
         -webkit-font-smoothing: antialiased;
         -moz-osx-font-smoothing: grayscale;
         position: relative;
-        top: 25px;
+        top: 15px;
     }
     .ul-element {
         list-style: none;

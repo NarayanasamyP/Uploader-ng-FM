@@ -8,21 +8,20 @@
                     <div id="dropArea">             
                         <span id="drop" class="droparea">
                             <a href="" id="browse" (click)='browseClick()'><u>Browse</u></a>
-                        </span>   
+                        </span>
+				 <ejs-uploader #defaultupload id='fileupload' class="dropFiles"  [asyncSettings]='path' (success)='onUploadSuccess($event)' 
+				  (failure)='onUploadFailed($event)' [allowedExtensions]='allowExtensions' (progress)='onUploadInProgress($event)' (selected)='onSelect($event)' (removing)='onFileRemove($event)'>
+				  <ng-template #template="" let-data>
+					<span class="fileListwrapper">
+					  <span class="icon template-icons sf-icon-{{data.type}}"></span>
+					  <span class="name file-name">{{data.name}} ( {{data.size}} bytes )</span>
+					  <span class="upload-status">{{data.status}}</span>
+					</span>
+					<span class="e-icons e-file-remove-btn" title="Remove"></span>
+				  </ng-template>
+				</ejs-uploader>
                     </div>
-                </div> 
-                <ejs-uploader #defaultupload id='template'  [asyncSettings]='path' (success)='onUploadSuccess($event)' 
-                    (failure)='onUploadFailed($event)' (progress)='onUploadInProgress($event)'>
-                    <ng-template #template="" let-data="">
-                    <span class="wrapper">
-                        <span class="icon template-icons sf-icon-{{data.type}}"></span>
-                        <span class="name file-name">{{data.name}}</span>
-                        <span class="name file-size"> {{data.size}} Bytes</span>
-                        <span class="upload-status">{{data.status}}</span>
-                        <span class="e-icons e-file-remove-btn" title="Remove"></span>
-                    </span>
-                    </ng-template>
-                </ejs-uploader>
+                </div>
             </div>
         </div>
     </div>

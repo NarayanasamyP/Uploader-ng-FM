@@ -1,34 +1,30 @@
-import { Component, ElementRef, ViewChild, Compiler, ViewContainerRef, ComponentFactoryResolver, NgModule, VERSION, asNativeElements} from '@angular/core';
+import { Component, ViewEncapsulation, ViewChild, Compiler, ViewContainerRef, ComponentFactoryResolver, NgModule, VERSION, asNativeElements} from '@angular/core';
 import { Uploader } from '@syncfusion/ej2-ng-inputs';
 import { Newcomponent } from './childComponent';
-import { append } from '@syncfusion/ej2-base';
-// import {Newcomponent} from './childComponent.ts'; 
 
 @Component({
-  selector: 'my-app',
+  selector: 'app-container',
   styleUrls: ['./dynamicInj.component.css'],
+  styles: ['.e-upload { width: 400px;margin-left: 350px;} #dynamicBtn {margin: 20px 0px 20px 20px }'],
+  encapsulation: ViewEncapsulation.None,
   template: `
     <div id="container" class="temp">
       <h4>{{name}}</h4>
-      <button (click)="openUploader()">Open Uploader</button>
+      <button id="dynamicBtn" (click)="openUploader()">Open Uploader</button>
+      <br/>
       <div id="dynamicUpload"></div>
     </div>
   `,
   entryComponents: [Newcomponent]
 })
 export class DynamicInjComponent {
-
-  //changes for new component
     constructor(
       private componentResolver: ComponentFactoryResolver,
       protected viewContainerRef: ViewContainerRef ) {
     }
     @ViewChild('newContent') newContent: Newcomponent;
-  //end of changes 
-  //childComponent : ChildComponent;
   public name: string = `Rendering uploader as dynamic`;
   public isChildModal: boolean = false;
- 
   public uploadObj: Uploader;
 
   openUploader() {

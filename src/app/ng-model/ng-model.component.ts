@@ -6,6 +6,7 @@ import { EmitType, createElement } from '@syncfusion/ej2-base';
   selector: 'app-container',
   templateUrl: './ng-model.component.html',
   styleUrls: ['./ng-model.component.css'],
+  styles: ['.e-upload { width: 400px;}'],
   encapsulation: ViewEncapsulation.None
 })
 export class ModelComponent {

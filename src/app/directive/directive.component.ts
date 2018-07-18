@@ -6,6 +6,7 @@ import { EmitType, createElement } from '@syncfusion/ej2-base';
   selector: 'app-container',
   templateUrl: './directive.component.html',
   styleUrls: ['./directive.component.css'],
+  styles: ['.e-upload { width: 400px;}'],
   encapsulation: ViewEncapsulation.None
 })
 export class DirectiveComponent {

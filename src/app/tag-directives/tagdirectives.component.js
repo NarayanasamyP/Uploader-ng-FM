@@ -10,25 +10,36 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 var core_1 = require("@angular/core");
 var ej2_ng_inputs_1 = require("@syncfusion/ej2-ng-inputs");
-var Newcomponent = (function () {
-    function Newcomponent() {
+var TagDirectivesComponent = (function () {
+    function TagDirectivesComponent() {
         this.path = {
             saveUrl: 'https://aspnetmvc.syncfusion.com/services/api/uploadbox/Save',
             removeUrl: 'https://aspnetmvc.syncfusion.com/services/api/uploadbox/Remove'
         };
+        this.dropElement = document.getElementsByClassName('container')[0];
     }
-    return Newcomponent;
+    TagDirectivesComponent.prototype.ngAfterViewInit = function () {
+        var _this = this;
+        document.getElementById('clearbtn').onclick = function () {
+            _this.uploadObj.clearAll();
+        };
+    };
+    TagDirectivesComponent.prototype.onFileRemove = function (args) {
+        args.postRawFile = false;
+    };
+    return TagDirectivesComponent;
 }());
 __decorate([
-    core_1.ViewChild('fileUpload'),
+    core_1.ViewChild('preloadupload'),
     __metadata("design:type", ej2_ng_inputs_1.UploaderComponent)
-], Newcomponent.prototype, "itemTemplate", void 0);
-Newcomponent = __decorate([
+], TagDirectivesComponent.prototype, "uploadObj", void 0);
+TagDirectivesComponent = __decorate([
     core_1.Component({
-        selector: 'child-container',
-        template: "\n      <ejs-uploader #fileUpload id=\"Uploader\" [asyncSettings]='path'  [autoUpload]= false ></ejs-uploader>\n  ",
-    }),
-    __metadata("design:paramtypes", [])
-], Newcomponent);
-exports.Newcomponent = Newcomponent;
-//# sourceMappingURL=childComponent.js.map
+        selector: 'app-container',
+        templateUrl: './tagdirectives.component.html',
+        styleUrls: ['./tagdirectives.component.css'],
+        encapsulation: core_1.ViewEncapsulation.None
+    })
+], TagDirectivesComponent);
+exports.TagDirectivesComponent = TagDirectivesComponent;
+//# sourceMappingURL=tagdirectives.component.js.map

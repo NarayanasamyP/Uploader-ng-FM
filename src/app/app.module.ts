@@ -18,6 +18,7 @@ import { DynamicInjComponent } from './dynamic-injection/dynamicInj.component'; 
 import { ModelComponent } from './ng-model/ng-model.component';
 import { DirectiveComponent } from './directive/directive.component';
 import { MyNgIfDirective } from './directive/strutural.directive';
+import {FieldErrorDisplayComponent} from './field-error-display/field-error-display.component';
 
 // const appRoutes: Routes = [
 //   { path: 'ng-content', component: NgContentComponent }
@@ -40,7 +41,8 @@ import { MyNgIfDirective } from './directive/strutural.directive';
        TemplateDrivenComponent,
        ModelComponent,
        DirectiveComponent,
-       MyNgIfDirective],
+       MyNgIfDirective,
+       FieldErrorDisplayComponent],
     bootstrap:    [ AppComponent ],
     providers: [DependService]
 })
