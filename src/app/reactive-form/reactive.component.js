@@ -24,9 +24,13 @@ var ReactiveComponent = (function () {
         if (this.form.valid) {
             this.dialogObj.show();
             var formObject = new ej2_ng_inputs_1.FormValidator("form");
-            formObject.element.reset();
-            this.uploadObj.clearAll();
+            formObject.element.submit();
         }
+    };
+    ReactiveComponent.prototype.reset = function () {
+        var formObject = new ej2_ng_inputs_1.FormValidator("form");
+        formObject.element.reset();
+        this.uploadObj.clearAll();
     };
     ReactiveComponent.prototype.onFileSelect = function (args) {
         this.form.patchValue({
@@ -53,9 +57,10 @@ __decorate([
 ], ReactiveComponent.prototype, "dialogObj", void 0);
 ReactiveComponent = __decorate([
     core_1.Component({
-        selector: 'about',
+        selector: 'app-container',
         styleUrls: ['./reactive.component.css'],
-        templateUrl: './reactive.component.html'
+        templateUrl: './reactive.component.html',
+        encapsulation: core_1.ViewEncapsulation.None
     }),
     __metadata("design:paramtypes", [forms_1.FormBuilder])
 ], ReactiveComponent);

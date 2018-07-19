@@ -1,14 +1,13 @@
+<h3 id="header">Template-driven forms</h3>
 <div class="container">
-  <h3>Template-driven forms</h3>
-  <form #userForm="ngForm" (ngSubmit)="onSubmit()">
+  <form #userForm="ngForm" action="https://aspnetmvc.syncfusion.com/services/api/uploadbox/Save" (ngSubmit)="onSubmit()">
     <div class="form-group">
-      <label for="fileName">Uploader</label>
       <ejs-uploader id="Uploader" #formUpload name="upload" class="form-control" (selected) = "onFileSelect($event)"
-       [(ngModel)]="user.fileName" #userid [multiple]='false' #userid="ngModel" required ></ejs-uploader>
+       [(ngModel)]="user.fileName" #userid [multiple]='false' #userid="ngModel" required (removing)='reset($event)'></ejs-uploader>
     </div>
     <ejs-dialog #confirmDialog id='confirm' [visible]='visiblity' [content]='content' width='400px' header='Success' isModal='true' [buttons]='buttons' [showCloseIcon]='showCloseIcon'></ejs-dialog>
     <button type="submit" class="btn buttons btn-success">Submit</button>
-    <button type="reset" class="btn buttons btn-success">Reset</button>
+    <button type="reset" (click)="reset()" class="btn buttons btn-success">Reset</button>
   </form>
 
   <pre>userForm.value: {{userForm.value | json}}</pre>

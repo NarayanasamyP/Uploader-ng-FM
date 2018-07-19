@@ -5,11 +5,11 @@ import { EmitType, createElement } from '@syncfusion/ej2-base';
 
 @Component({
   selector: 'ej2-component',
-  template: ` <ejs-uploader #defaultupload id='fileupload'  [asyncSettings]='path' allowedExtensions={{ej2upload}}>
+  template: `<ejs-uploader #uploaddependency id='depedency' [asyncSettings]='path' allowedExtensions={{ej2upload}}>
   </ejs-uploader>`
 })
 export class Ej2DependentComponent {
-  @ViewChild('defaultupload')
+  @ViewChild('uploaddependency')
   public uploadObj: UploaderComponent;
   public path: Object = {
       saveUrl: 'https://aspnetmvc.syncfusion.com/services/api/uploadbox/Save',

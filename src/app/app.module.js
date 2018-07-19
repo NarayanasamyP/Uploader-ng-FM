@@ -26,6 +26,7 @@ var ng_model_component_1 = require("./ng-model/ng-model.component");
 var directive_component_1 = require("./directive/directive.component");
 var strutural_directive_1 = require("./directive/strutural.directive");
 var field_error_display_component_1 = require("./field-error-display/field-error-display.component");
+// import {TagDirectivesComponent} from './tag-directives/tagdirectives.component';
 // const appRoutes: Routes = [
 //   { path: 'ng-content', component: NgContentComponent }
 // ];
@@ -38,7 +39,7 @@ AppModule = __decorate([
     core_1.NgModule({
         imports: [platform_browser_1.BrowserModule, router_1.RouterModule.forRoot(app_routes_1.rootRouterConfig, { useHash: true }),
             forms_1.FormsModule,
-            forms_1.ReactiveFormsModule,],
+            forms_1.ReactiveFormsModule],
         declarations: [app_component_1.AppComponent,
             app_component_2.DependencyComponent,
             dependency_component_1.Ej2DependentComponent,

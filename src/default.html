@@ -1,13 +1,26 @@
-<h1>Uploader Feature-Matrix</h1>
-  <nav>
-    <button title='Dependency Injection'><a routerLink="/dependency-injection">Dependency Injection</a></button>
-    <button title='Ng-Model'><a routerLink="/ng-model">ng-model</a></button>
-    <button title='Directive'><a routerLink="/directive">Directive</a></button>
-    <button title='Simple rendering'><a routerLink="/simple-rendering">Simple rendering</a></button>
-    <button title='Ng-Template'><a routerLink="/ng-template">Ng Template</a></button>
-    <button title='template-driven-form'><a routerLink="/template-driven-form">Template Driven Form</a></button>
-    <button title='reactive-form'><a routerLink="/reactive-form">Reactive Form</a></button>
-    <button title='dynamic-injection'><a routerLink="/dynamic-injection">Dynamic Injection</a></button>
+<!-- <style link="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/css/bootstrap.min.css"/> -->
+<!-- <head>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet"/> </head> -->
+<style>
+  .btn.btn-danger a {
+    color: white;
+  }
+</style>
+<nav class="navbar navbar-inverse">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <a class="navbar-brand" href="#">Uploader Feature-Matrix</a>
+      </div>
+      <button class="btn btn-danger navbar-btn" title='Dependency Injection'><a routerLink="/dependency-injection">Dependency Injection</a></button>
+    <button class="btn btn-danger navbar-btn" title='Ng-Model'><a routerLink="/ng-model">ng-model</a></button>
+    <button class="btn btn-danger navbar-btn" title='Directive'><a routerLink="/directive">Directive</a></button>
+    <button class="btn btn-danger navbar-btn" title='Simple rendering'><a routerLink="/simple-rendering">Simple rendering</a></button>
+    <button class="btn btn-danger navbar-btn" title='Ng-Template'><a routerLink="/ng-template">Ng Template</a></button>
+    <button class="btn btn-danger navbar-btn" title='template-driven-form'><a routerLink="/template-driven-form">Template Driven Form</a></button>
+    <button class="btn btn-danger navbar-btn" title='reactive-form'><a routerLink="/reactive-form">Reactive Form</a></button>
+    <button class="btn btn-danger navbar-btn" title='dynamic-injection'><a routerLink="/dynamic-injection">Dynamic Injection</a></button>
+    <!-- <button title='tag-directives'><a routerLink="/tag-directives">Uploader Tag-directive</a></button> -->
+    </div>
   </nav>
   <main>
     <router-outlet></router-outlet>

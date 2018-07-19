@@ -1,11 +1,10 @@
-
-  .form-control {
+.form-control {
     border: none;
     box-shadow: none;
   }
   
   .form-horizontal {
-    margin-top: 80px;
+    margin-top: 10px;
   }
   
   form {

@@ -19,6 +19,7 @@ import { ModelComponent } from './ng-model/ng-model.component';
 import { DirectiveComponent } from './directive/directive.component';
 import { MyNgIfDirective } from './directive/strutural.directive';
 import {FieldErrorDisplayComponent} from './field-error-display/field-error-display.component';
+// import {TagDirectivesComponent} from './tag-directives/tagdirectives.component';
 
 // const appRoutes: Routes = [
 //   { path: 'ng-content', component: NgContentComponent }
@@ -27,7 +28,7 @@ import {FieldErrorDisplayComponent} from './field-error-display/field-error-disp
 @NgModule({
   imports:      [ BrowserModule, RouterModule.forRoot(rootRouterConfig, { useHash: true }), 
     FormsModule,
-    ReactiveFormsModule,],
+    ReactiveFormsModule],
     declarations: [ AppComponent,
        DependencyComponent,
        Ej2DependentComponent,

@@ -1,14 +1,14 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
+import { Component, OnInit, ViewChild, ViewEncapsulation } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
-import { Router, ActivatedRoute } from '@angular/router';
 import { UploaderComponent, FormValidator } from '@syncfusion/ej2-ng-inputs';
 import { DialogComponent } from '@syncfusion/ej2-ng-popups';
 
 
 @Component({
-  selector: 'about',
+  selector: 'app-container',
   styleUrls: ['./reactive.component.css'],
-  templateUrl: './reactive.component.html'
+  templateUrl: './reactive.component.html',
+  encapsulation: ViewEncapsulation.None
 })
 export class ReactiveComponent {
   form: FormGroup;
@@ -26,9 +26,14 @@ export class ReactiveComponent {
     if (this.form.valid) {
       this.dialogObj.show();
       let formObject: FormValidator = new FormValidator("form");
-      formObject.element.reset();   
-      this.uploadObj.clearAll();
+      formObject.element.submit();
     }
+  }
+
+  reset() {
+    let formObject: FormValidator = new FormValidator("form");
+    formObject.element.reset();
+    this.uploadObj.clearAll();
   }
 
   onFileSelect(args: any) {
@@ -37,7 +42,7 @@ export class ReactiveComponent {
    });
   }
 
-  onClick(){
+  onClick() {
     this.dialogObj.hide();
   }
   ngOnInit() {
@@ -45,5 +50,4 @@ export class ReactiveComponent {
       upload: [null, [Validators.required]],
     });
   }
-
 }

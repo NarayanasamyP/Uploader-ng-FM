@@ -7,7 +7,8 @@
     paths: {
       // paths serve as alias
       'npm:': 'node_modules/',
-      "syncfusion:": "node_modules/@syncfusion/", //** syncfusion alias **
+      "syncfusion:": "http://npmci.syncfusion.com/packages/development/", //** syncfusion alias **
+      // "syncfusion:": "node_modules/@syncfusion/", //** syncfusion alias **
     },
     // map tells the System loader where to look for things
     map: {

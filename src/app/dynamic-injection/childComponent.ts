@@ -1,11 +1,13 @@
-import {Component, ViewChild, TemplateRef} from '@angular/core';
+import {Component, ViewChild, TemplateRef, ViewEncapsulation} from '@angular/core';
 import { UploaderComponent } from '@syncfusion/ej2-ng-inputs';
 
 @Component({
   selector: 'child-container',
   template: `
-      <ejs-uploader #fileUpload id="Uploader" [asyncSettings]='path'  [autoUpload]= false ></ejs-uploader>
+      <ejs-uploader #fileUpload id="dynamic" [asyncSettings]='path'  [autoUpload]= false ></ejs-uploader>
   `,
+styleUrls: ['./dynamicInj.component.css'],
+  encapsulation: ViewEncapsulation.None
 })
 export class Newcomponent {
     @ViewChild('fileUpload')

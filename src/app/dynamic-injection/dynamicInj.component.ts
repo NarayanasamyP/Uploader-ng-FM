@@ -1,16 +1,15 @@
-import { Component, ViewEncapsulation, ViewChild, Compiler, ViewContainerRef, ComponentFactoryResolver, NgModule, VERSION, asNativeElements} from '@angular/core';
+import { Component, ViewEncapsulation, ViewChild, ViewContainerRef, ComponentFactoryResolver, NgModule, VERSION, asNativeElements} from '@angular/core';
 import { Uploader } from '@syncfusion/ej2-ng-inputs';
 import { Newcomponent } from './childComponent';
 
 @Component({
   selector: 'app-container',
   styleUrls: ['./dynamicInj.component.css'],
-  styles: ['.e-upload { width: 400px;margin-left: 350px;} #dynamicBtn {margin: 20px 0px 20px 20px }'],
   encapsulation: ViewEncapsulation.None,
   template: `
-    <div id="container" class="temp">
-      <h4>{{name}}</h4>
-      <button id="dynamicBtn" (click)="openUploader()">Open Uploader</button>
+    <div id="dynamic_container" class="temp">
+      <h3 id="header">{{name}}</h3>
+      <button id="dynamicBtn" class="btn btn-primary" (click)="openUploader()">Open Uploader</button>
       <br/>
       <div id="dynamicUpload"></div>
     </div>

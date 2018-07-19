@@ -37,12 +37,16 @@ var TemplateDrivenComponent = (function () {
         if (!ej2_base_1.isNullOrUndefined(this.user.fileName)) {
             this.dialogObj.show();
             var formObject = new ej2_ng_inputs_1.FormValidator("form");
-            formObject.element.reset();
-            this.uploadObj.clearAll();
+            formObject.element.submit();
         }
         else {
             return false;
         }
+    };
+    TemplateDrivenComponent.prototype.reset = function () {
+        var formObject = new ej2_ng_inputs_1.FormValidator("form");
+        formObject.element.reset();
+        this.uploadObj.clearAll();
     };
     TemplateDrivenComponent.prototype.onFileSelect = function (args) {
         this.user.fileName = args.filesData[0].name;
@@ -61,7 +65,8 @@ TemplateDrivenComponent = __decorate([
     core_1.Component({
         selector: 'sample',
         styleUrls: ['./template-driven.component.css'],
-        templateUrl: './template-driven.component.html'
+        templateUrl: './template-driven.component.html',
+        encapsulation: core_1.ViewEncapsulation.None
     })
 ], TemplateDrivenComponent);
 exports.TemplateDrivenComponent = TemplateDrivenComponent;

@@ -27,13 +27,13 @@ var Ej2DependentComponent = (function () {
     return Ej2DependentComponent;
 }());
 __decorate([
-    core_1.ViewChild('defaultupload'),
+    core_1.ViewChild('uploaddependency'),
     __metadata("design:type", ej2_ng_inputs_1.UploaderComponent)
 ], Ej2DependentComponent.prototype, "uploadObj", void 0);
 Ej2DependentComponent = __decorate([
     core_1.Component({
         selector: 'ej2-component',
-        template: " <ejs-uploader #defaultupload id='fileupload'  [asyncSettings]='path' allowedExtensions={{ej2upload}}>\n  </ejs-uploader>"
+        template: "<ejs-uploader #uploaddependency id='depedency' [asyncSettings]='path' allowedExtensions={{ej2upload}}>\n  </ejs-uploader>"
     }),
     __metadata("design:paramtypes", [dependent_service_1.DependService])
 ], Ej2DependentComponent);

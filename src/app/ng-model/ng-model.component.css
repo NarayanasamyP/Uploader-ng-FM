@@ -1,35 +1,19 @@
-#container{
-    height: auto;
-    width: 500px;
-    margin: 0 auto;
-}
 h1 {
     color: #369;
     font-family: Arial, Helvetica, sans-serif;
     font-size: 250%;
   }
-  .control_wrapper {
-    max-width: 500px;
-    min-width: 245px;
-    margin: auto;
-  }
-  .control-sectin #defaultfileupload .e-upload.e-control {
-    position: relative;
-    margin: 15px 0;
-  }
   
   .control-sectin .template-icons {
         padding-left: 3%;
     }
-    .control-sectin span.wrapper {
-        height: 65px;
-        display: block;
-        padding: 2px;
-        width: 85%;
-    }
-  
     .control-sectin .e-upload .e-upload-files .e-upload-file-list {
         min-height: 70px;
+    }
+
+    #modalInput {
+        padding-top: 30px;
+        width: 400px;
     }
   
      a#browse {

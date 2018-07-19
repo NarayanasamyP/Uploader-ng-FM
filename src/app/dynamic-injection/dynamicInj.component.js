@@ -33,9 +33,8 @@ DynamicInjComponent = __decorate([
     core_1.Component({
         selector: 'app-container',
         styleUrls: ['./dynamicInj.component.css'],
-        styles: ['.e-upload { width: 400px;margin-left: 350px;} #dynamicBtn {margin: 20px 0px 20px 20px }'],
         encapsulation: core_1.ViewEncapsulation.None,
-        template: "\n    <div id=\"container\" class=\"temp\">\n      <h4>{{name}}</h4>\n      <button id=\"dynamicBtn\" (click)=\"openUploader()\">Open Uploader</button>\n      <br/>\n      <div id=\"dynamicUpload\"></div>\n    </div>\n  ",
+        template: "\n    <div id=\"dynamic_container\" class=\"temp\">\n      <h3 id=\"header\">{{name}}</h3>\n      <button id=\"dynamicBtn\" class=\"btn btn-primary\" (click)=\"openUploader()\">Open Uploader</button>\n      <br/>\n      <div id=\"dynamicUpload\"></div>\n    </div>\n  ",
         entryComponents: [childComponent_1.Newcomponent]
     }),
     __metadata("design:paramtypes", [core_1.ComponentFactoryResolver,

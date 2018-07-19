@@ -26,7 +26,9 @@ __decorate([
 Newcomponent = __decorate([
     core_1.Component({
         selector: 'child-container',
-        template: "\n      <ejs-uploader #fileUpload id=\"Uploader\" [asyncSettings]='path'  [autoUpload]= false ></ejs-uploader>\n  ",
+        template: "\n      <ejs-uploader #fileUpload id=\"dynamic\" [asyncSettings]='path'  [autoUpload]= false ></ejs-uploader>\n  ",
+        styleUrls: ['./dynamicInj.component.css'],
+        encapsulation: core_1.ViewEncapsulation.None
     }),
     __metadata("design:paramtypes", [])
 ], Newcomponent);
