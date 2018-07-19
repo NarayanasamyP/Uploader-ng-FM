@@ -71,7 +71,7 @@ export class TemplateComponent {
   }
   public onSelect:  EmitType<Object> = (args: any) => {
     let allowedTypes: string[] = ['pdf', 'png', 'txt'];
-    let modifiedFiles: object[] = [];
+    let modifiedFiles: any = [];
     for (let file of args.filesData) {
         if (allowedTypes.indexOf(file.type.toLowerCase()) > -1) {
             modifiedFiles.push(file);
